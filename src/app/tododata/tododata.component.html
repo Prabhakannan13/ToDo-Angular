@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Todo</th>
+                    <th scope="col">Completed</th>
+                    <th scope="col">UserID</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let i of tododata.todos" >
+                    <td>{{i.id}}</td>
+                    <td>{{i.todo}}</td>
+                    <td *ngIf="i.completed">
+                        <div class="alert alert-success" role="alert">
+                            True
+                        </div>
+                    </td>
+                    <td *ngIf="! i.completed">
+                        <div class="alert alert-danger" role="alert">
+                            false
+                        </div>
+                    </td>
+                    <td>{{i.userId}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>   
+
